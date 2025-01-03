@@ -14,7 +14,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 -- Default wallpaper
-theme.wallpaper = os.getenv("HOME") .. "/Pictures/wall.png"
+theme.wallpaper = os.getenv("HOME") .. "/wallpaper/wall.png"
 
 -- ░█▀▀░█▀█░█▀█░▀█▀░█▀▀
 -- ░█▀▀░█░█░█░█░░█░░▀▀█

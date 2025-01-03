@@ -521,8 +521,8 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				"librewolf"
-				"zen-browser"
+				"librewolf",
+				"zen-browser",
 				"firefox",
 				"Nightly",
 				"Vivaldi-stable",
