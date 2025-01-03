@@ -72,14 +72,14 @@ theme.border_width = dpi(0)
 theme.border_normal = theme.light_bg
 theme.border_focus = theme.blue
 theme.border_radius = dpi(0)
-theme.widget_border_width = dpi(2)
+theme.widget_border_width = dpi(0)
 theme.widget_border_color = theme.light_bg
 
 -- Wibar
 -- ===================================================================
 theme.wibar_position = "top"
 theme.wibar_height = dpi(27)
-theme.wibar_width = dpi(1810)
+theme.wibar_width = dpi(1600)
 theme.wibar_bg = theme.black
 theme.wibar_fg = theme.white
 theme.wibar_border_color = theme.black

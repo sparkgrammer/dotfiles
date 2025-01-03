@@ -11,13 +11,13 @@ local decorations = {}
 -- User variables and preferences
 -- ===================================================================
 user = {
-	terminal = "wezterm start --always-new-process",
-	floating_terminal = "wezterm start --class floating_terminal",
-	scratchpad_terminal = "wezterm start --class scratchpad",
-	editor = "wezterm start --class editor -e hx",
-	browser = "librewolf",
+	terminal = "kitty",
+	floating_terminal = "kitty --class floating_terminal",
+	scratchpad_terminal = "kitty --class scratchpad",
+	editor = "kitty --class editor -e nvim",
+	browser = "zen-browser",
 	file_manager = "pcmanfm",
-	term_filemanager = "wezterm start --class term_filemanager -e yazi",
+	term_filemanager = "kitty --class term_filemanager -e yazi",
 	visual_editor = "",
 	openweathermap_key = "d1b3b6a81db867259446b0863d5f9108",
 	openweathermap_city_id = {
@@ -137,7 +137,7 @@ awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.floating,
 	awful.layout.suit.max,
-	--awful.layout.suit.spiral,
+	awful.layout.suit.spiral,
 	--awful.layout.suit.spiral.dwindle,
 	--awful.layout.suit.tile.top,
 	--awful.layout.suit.fair,
@@ -521,6 +521,8 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
+				"librewolf"
+				"zen-browser"
 				"firefox",
 				"Nightly",
 				"Vivaldi-stable",
