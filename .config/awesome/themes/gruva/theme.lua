@@ -21,10 +21,11 @@ theme.wallpaper = os.getenv("HOME") .. "/wallpaper/wall.png"
 -- ░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀
 
 theme.font_name = "monospace "
-theme.font = theme.font_name .. "10"
-theme.wibar_font = theme.font_name .. "Bold 10"
+theme.font = theme.font_name .. "13"
+theme.wibar_font = theme.font_name .. "Bold 13"
 theme.icon_font_name = "monospace "
-theme.wibar_icon_font = theme.font_name .. "12"
+theme.wibar_icon_font = theme.font_name .. "13"
+theme.wibar_stretch = true
 
 -- ░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀
 -- ░█░░░█░█░█░░░█░█░█▀▄░▀▀█
@@ -78,8 +79,8 @@ theme.widget_border_color = theme.light_bg
 -- Wibar
 -- ===================================================================
 theme.wibar_position = "top"
-theme.wibar_height = dpi(27)
-theme.wibar_width = dpi(1600)
+theme.wibar_height = dpi(32)
+theme.wibar_width = dpi(1920)
 theme.wibar_bg = theme.black
 theme.wibar_fg = theme.white
 theme.wibar_border_color = theme.black
@@ -89,9 +90,9 @@ theme.wibar_border_radius = dpi(0)
 -- Taglist
 -- ===================================================================
 theme.taglist_text_font = theme.wibar_ico_font
-theme.taglist_text_empty = { "", "", "", "", "", "", "[]=", "", "", "" }
-theme.taglist_text_occupied = { "", "", "", "", "", "", "[]=", "", "", "" }
-theme.taglist_text_focused = { "", "", "", "", "", "", "[]=", "", "", "" }
+theme.taglist_text_empty = { "", "", "", "", "", "", "", "󰅪", "󰅪", "󰅪" }
+theme.taglist_text_occupied = { "", "", "", "", "", "", "", "󰅪", "󰅪", "󰅪" }
+theme.taglist_text_focused = { "", "", "", "", "", "", "", "󰅪", "󰅪", "󰅪" }
 theme.taglist_text_urgent = { "", "", "", "", "", "", "", "", "", "" }
 
 theme.taglist_text_color_empty = {
@@ -154,7 +155,7 @@ theme.taglist_fg_empty = theme.black_alt
 theme.taglist_bg_urgent = theme.wibar_bg
 theme.taglist_fg_urgent = theme.fg_urgent
 theme.taglist_disable_icon = true
-theme.taglist_spacing = dpi(0)
+theme.taglist_spacing = dpi(16)
 local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_focus)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
@@ -193,7 +194,7 @@ theme.titlebar_bg = theme.bg_normal
 -- Variables set for theming the menu:
 -- ===================================================================
 theme.menu_height = dpi(30)
-theme.menu_width = dpi(150)
+theme.menu_width = dpi(220)
 theme.menu_bg_normal = theme.bg_normal
 theme.menu_fg_normal = theme.fg_normal
 theme.menu_bg_focus = theme.bg_focus
@@ -203,8 +204,8 @@ theme.menu_border_color = theme.widget_border_color
 
 -- Gaps
 -- ===================================================================
-theme.useless_gap = dpi(1)
-theme.screen_margin = dpi(3)
+theme.useless_gap = dpi(0)
+theme.screen_margin = dpi(0)
 
 -- Systray
 -- ===================================================================

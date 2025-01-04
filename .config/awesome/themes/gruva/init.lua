@@ -26,7 +26,7 @@ local memory_widget = wibox.widget({
 				{
 					id = "icon",
 					text = "",
-					forced_width = dpi(30),
+					forced_width = dpi(46),
 					align = "center",
 					valign = "center",
 					font = beautiful.wibar_icon_font,
@@ -104,101 +104,101 @@ local clock_widget = wibox.widget({
 
 -- CPU widget
 -- ===================================================================
-local cpu_widget = wibox.widget({
-	{
-		{
-			{
-				{
-					id = "icon",
-					text = "",
-					forced_width = dpi(30),
-					align = "center",
-					valign = "center",
-					font = beautiful.wibar_icon_font,
-					widget = wibox.widget.textbox,
-				},
-				-- fixing font centering
-				right = dpi(5),
-				widget = wibox.container.margin,
-			},
-			bg = beautiful.cyan,
-			fg = beautiful.light_bg,
-			widget = wibox.widget.background,
-		},
-		{
-			{
-				id = "text",
-				font = beautiful.wibar_font,
-				widget = wibox.widget.textbox,
-			},
-			left = dpi(5),
-			right = dpi(5),
-			widget = wibox.container.margin,
-		},
-		layout = wibox.layout.fixed.horizontal,
-	},
-	fg = beautiful.cyan,
-	bg = beautiful.light_bg,
-	widget = wibox.container.background,
-})
+-- local cpu_widget = wibox.widget({
+-- 	{
+-- 		{
+-- 			{
+-- 				{
+-- 					id = "icon",
+-- 					text = "",
+-- 					forced_width = dpi(30),
+-- 					align = "center",
+-- 					valign = "center",
+-- 					font = beautiful.wibar_icon_font,
+-- 					widget = wibox.widget.textbox,
+-- 				},
+-- 				-- fixing font centering
+-- 				right = dpi(5),
+-- 				widget = wibox.container.margin,
+-- 			},
+-- 			bg = beautiful.cyan,
+-- 			fg = beautiful.light_bg,
+-- 			widget = wibox.widget.background,
+-- 		},
+-- 		{
+-- 			{
+-- 				id = "text",
+-- 				font = beautiful.wibar_font,
+-- 				widget = wibox.widget.textbox,
+-- 			},
+-- 			left = dpi(5),
+-- 			right = dpi(5),
+-- 			widget = wibox.container.margin,
+-- 		},
+-- 		layout = wibox.layout.fixed.horizontal,
+-- 	},
+-- 	fg = beautiful.cyan,
+-- 	bg = beautiful.light_bg,
+-- 	widget = wibox.container.background,
+-- })
 
-awesome.connect_signal("evil::cpu", function(cpu_idle)
-	cpu_widget:get_children_by_id("text")[1].markup = tostring(cpu_idle) .. "%"
-end)
+-- awesome.connect_signal("evil::cpu", function(cpu_idle)
+-- 	cpu_widget:get_children_by_id("text")[1].markup = tostring(cpu_idle) .. "%"
+-- end)
 
 -- Weather widget
 -- ===================================================================
-local weather_widget = wibox.widget({
-	{
-		{
-			{
-				id = "icon",
-				text = "",
-				forced_width = dpi(30),
-				align = "center",
-				valign = "center",
-				font = beautiful.wibar_icon_font,
-				widget = wibox.widget.textbox,
-			},
-			bg = beautiful.magenta,
-			fg = beautiful.light_bg,
-			widget = wibox.widget.background,
-		},
-		{
-			{
-				{
-					id = "description",
-					font = beautiful.wibar_font,
-					widget = wibox.widget.textbox,
-				},
-				nil,
-				{
-					id = "temp_current",
-					align = "right",
-					font = beautiful.wibar_font,
-					widget = wibox.widget.textbox,
-				},
-				widget = wibox.layout.align.horizontal,
-			},
-			left = dpi(5),
-			right = dpi(5),
-			widget = wibox.container.margin,
-		},
-		layout = wibox.layout.fixed.horizontal,
-	},
-	fg = beautiful.magenta,
-	bg = beautiful.light_bg,
-	widget = wibox.container.background,
-})
+-- local weather_widget = wibox.widget({
+-- 	{
+-- 		{
+-- 			{
+-- 				id = "icon",
+-- 				text = "",
+-- 				forced_width = dpi(30),
+-- 				align = "center",
+-- 				valign = "center",
+-- 				font = beautiful.wibar_icon_font,
+-- 				widget = wibox.widget.textbox,
+-- 			},
+-- 			bg = beautiful.magenta,
+-- 			fg = beautiful.light_bg,
+-- 			widget = wibox.widget.background,
+-- 		},
+-- 		{
+-- 			{
+-- 				{
+-- 					id = "description",
+-- 					font = beautiful.wibar_font,
+-- 					widget = wibox.widget.textbox,
+-- 				},
+-- 				nil,
+-- 				{
+-- 					id = "temp_current",
+-- 					align = "right",
+-- 					font = beautiful.wibar_font,
+-- 					widget = wibox.widget.textbox,
+-- 				},
+-- 				widget = wibox.layout.align.horizontal,
+-- 			},
+-- 			left = dpi(5),
+-- 			right = dpi(5),
+-- 			widget = wibox.container.margin,
+-- 		},
+-- 		layout = wibox.layout.fixed.horizontal,
+-- 	},
+-- 	fg = beautiful.magenta,
+-- 	bg = beautiful.light_bg,
+-- 	widget = wibox.container.background,
+-- })
 
-awesome.connect_signal("evil::weather", function(result)
-	weather_widget:get_children_by_id("description")[1].markup = result.current.weather[1].description:gsub(
-		"^%l",
-		string.upper
-	) .. ", "
-	weather_widget:get_children_by_id("temp_current")[1].markup = math.floor(result.current.temp)
-		.. "<sup><span>°</span></sup><span>C</span>"
-end)
+-- awesome.connect_signal("evil::weather", function(result)
+-- 	weather_widget:get_children_by_id("description")[1].markup = result.current.weather[1].description:gsub(
+-- 		"^%l",
+-- 		string.upper
+-- 	) .. ", "
+-- 	weather_widget:get_children_by_id("temp_current")[1].markup = math.floor(result.current.temp)
+-- 		.. "<sup><span>°</span></sup><span>C</span>"
+-- end)
 
 -- Playerctl widget
 -- ===================================================================
@@ -407,8 +407,8 @@ awful.screen.connect_for_each_screen(function(s)
 		awful.widget.layoutbox({
 			screen = s,
 			resize = true,
-			forced_width = dpi(15),
-			forced_height = dpi(15),
+			forced_width = dpi(32),
+			forced_height = dpi(32),
 			widget = wibox.container.place,
 			-- Add buttons, allowing you to change the layout
 			buttons = {
@@ -471,11 +471,11 @@ awful.screen.connect_for_each_screen(function(s)
 							font = beautiful.taglist_text_font,
 							align = "center",
 							valign = "center",
-							forced_width = dpi(24),
+							forced_width = dpi(32),
 							widget = wibox.widget.textbox,
 						},
 						top = dpi(0),
-						right = dpi(4),
+						right = dpi(8),
 						bottom = dpi(-1),
 						widget = wibox.container.margin,
 					},
@@ -533,7 +533,7 @@ awful.screen.connect_for_each_screen(function(s)
 					},
 					layout = wibox.layout.fixed.horizontal,
 				},
-				forced_width = dpi(220),
+				forced_width = dpi(320),
 				left = dpi(10),
 				right = dpi(10),
 				widget = wibox.container.margin,
@@ -562,33 +562,35 @@ awful.screen.connect_for_each_screen(function(s)
 
 	s.mywibox:setup({
 		{
+
 			{
 				s.mytaglist,
 				s.mytasklist,
 				align = "left",
 				spacing = dpi(10),
 				layout = wibox.layout.fixed.horizontal,
+
 			},
 			{
-				s.mypromptbox,
-				playerctl_widget,
-				-- volume_bar,
+                --s.mypromptbox,
+				--playerctl_widget,
+				--volume_bar,
 				-- battery_bar,
 				align = "center",
 				spacing = dpi(10),
 				layout = wibox.layout.fixed.horizontal,
 			},
-			{
-				weather_widget,
+
+			 {
 				memory_widget,
-				cpu_widget,
 				clock_widget,
 				s.systray,
 				s.mylayoutbox,
-				align = "right",
 				spacing = dpi(10),
 				layout = wibox.layout.fixed.horizontal,
+				align = "right"
 			},
+			
 			expand = "none",
 			layout = wibox.layout.align.horizontal,
 		},

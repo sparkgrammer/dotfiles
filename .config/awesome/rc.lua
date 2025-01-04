@@ -542,6 +542,7 @@ awful.rules.rules = {
 			class = {
 				"^editor$",
 				"VSCodium",
+				"Code",
 			},
 		},
 		properties = { screen = 1, tag = awful.screen.focused().tags[2] },
